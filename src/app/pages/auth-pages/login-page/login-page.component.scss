@@ -1,0 +1,50 @@
+:host {
+
+  .login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & > .p-element {
+      width: 70%;
+
+      .login-greetings {
+        font-weight: 700;
+        font-size: 1.5rem;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .auth-modes-container {
+        display: flex;
+        justify-content: space-around;
+
+        .box {
+          padding: 5rem 0;
+        }
+
+        .login-box {
+
+          .key-field {
+            margin-bottom: 1rem;
+          }
+
+          &::ng-deep {
+
+            .p-button {
+              width: 100% !important;
+            }
+          }
+        }
+
+        .sign-up-box {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+}

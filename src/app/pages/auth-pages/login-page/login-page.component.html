@@ -1,0 +1,34 @@
+<div class="login-container">
+  <p-card>
+    <p class="login-greetings">Seja bem-vindo ao FutProject!</p>
+    <div class="auth-modes-container">
+        <div class="login-box box">
+          <form>
+            <div class="key-field">
+              <div class="p-inputgroup">
+                <span class="p-inputgroup-addon">
+                    <i class="pi pi-key"></i>
+                </span>
+                <span class="p-float-label">
+                    <input type="text" id="key" pInputText>
+                    <label for="key">API Key</label>
+                </span>
+              </div>
+            </div>
+            <div class="login-btn">
+              <p-button label="Entrar"></p-button>
+            </div>
+          </form>
+        </div>
+        <div class="divider">
+            <p-divider layout="vertical">
+                <b>OU</b>
+            </p-divider>
+        </div>
+        <div class="sign-up-box box">
+          <a href="https://dashboard.api-football.com/register" target="_blank"><p-button label="Registre-se para receber a chave" icon="pi pi-user-plus" styleClass="p-button-success"></p-button></a>
+          <!-- <p-button (click)="GoToSignUp()" label="Sign Up" icon="pi pi-user-plus" styleClass="p-button-success"></p-button> -->
+        </div>
+    </div>
+  </p-card>
+</div>
