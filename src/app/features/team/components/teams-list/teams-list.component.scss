@@ -1,0 +1,51 @@
+:host {
+
+  .teams-list-container{
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 1.8rem 0;
+      width: 100%;
+      text-align: center;
+    }
+
+    .teams-list {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .team-box {
+        width: 50%;
+        padding: 2rem;
+
+        .card-content {
+          width: 100%;
+          min-height: 15rem;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          padding: 1rem;
+
+          .team-info-container {
+            width: 50%;
+          }
+
+          h2 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+          }
+
+          ul {
+            margin-bottom: 1rem;
+          }
+
+        }
+
+      }
+    }
+  }
+}

@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { SearchCountryComponent } from '@features/country/components/search-country/search-country.component';
 import { LeaguesListComponent } from '@features/league/components/leagues-list/leagues-list.component';
 import { TeamsListComponent } from '@features/team/components/teams-list/teams-list.component';
+import { TeamInfoComponent } from '@features/team/components/team-info/team-info.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'teams/:league/:season',
     component: TeamsListComponent,
+  },
+  {
+    path: 'teams/:league/:season/:team',
+    component: TeamInfoComponent,
   },
   {
     path: '**',

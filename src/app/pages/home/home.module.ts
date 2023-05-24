@@ -6,6 +6,7 @@ import { HomeComponent } from './home.component';
 import { HeaderModule } from '@features/header/header.module';
 import { CountryModule } from '@features/country/country.module';
 import { LeagueModule } from '@features/league/league.module';
+import { TeamModule } from '@features/team/team.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { LeagueModule } from '@features/league/league.module';
     HeaderModule,
     CountryModule,
     LeagueModule,
+    TeamModule
   ]
 })
 export class HomeModule { }
