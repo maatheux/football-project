@@ -25,10 +25,9 @@ export class LoginPageComponent implements OnInit {
   public SendKey(key?: string) {
     if (key) this.apiStatusService.GetApiStatus(key).subscribe({
       next: (res) => {
-        console.log(res);
 
         if (res !== EApiStatus.NotValid) {
-          console.log(this.cookieService.SaveKey(this.userKey));
+          this.cookieService.SaveKey(this.userKey);
           this.router.navigate(['/home'])
         }
       },

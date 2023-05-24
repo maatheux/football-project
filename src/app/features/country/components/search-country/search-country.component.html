@@ -1,0 +1,9 @@
+<div class="country-search-container">
+  <div class="image-container"></div>
+  <div class="search-container">
+    <p>Escolha o país e descubra mais sobre as ligas e seus jogadores</p>
+    <div class="countries-dropdown">
+      <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" placeholder="Selecione o país" [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name"></p-dropdown>
+    </div>
+  </div>
+</div>

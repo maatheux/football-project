@@ -1,0 +1,22 @@
+:host {
+
+  .header-container {
+    width: 100%;
+    height: 4.375rem;
+    background-color: var(--berkeley-blue);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .logo-box {
+      cursor: pointer;
+
+      p {
+        color: var(--honeydew);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
