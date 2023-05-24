@@ -28,7 +28,7 @@ export class LoginPageComponent implements OnInit {
 
         if (res !== EApiStatus.NotValid) {
           this.cookieService.SaveKey(this.userKey);
-          this.router.navigate(['/home'])
+          this.router.navigate(['/'])
         }
       },
       error: (err) => console.error(err),

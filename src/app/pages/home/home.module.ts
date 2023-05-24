@@ -5,6 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { HeaderModule } from '@features/header/header.module';
 import { CountryModule } from '@features/country/country.module';
+import { LeagueModule } from '@features/league/league.module';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { CountryModule } from '@features/country/country.module';
     HomeRoutingModule,
     HeaderModule,
     CountryModule,
+    LeagueModule,
   ]
 })
 export class HomeModule { }

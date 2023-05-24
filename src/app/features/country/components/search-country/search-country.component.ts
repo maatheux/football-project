@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CountriesResponse } from '@features/country/interfaces/countries-response.interface';
 import { CountriesService } from '@features/country/services/countries.service';
 
@@ -12,7 +13,10 @@ export class SearchCountryComponent implements OnInit {
   public countries: CountriesResponse[] = []
   public selectedCountry = "";
 
-  constructor(private countriesService: CountriesService) { }
+  constructor(
+    private countriesService: CountriesService,
+    private route: Router,
+  ) { }
 
   ngOnInit(): void {
     this.countriesService.GetAllCountries().subscribe({
@@ -20,6 +24,15 @@ export class SearchCountryComponent implements OnInit {
         this.countries = [...res];
       }
     })
+  }
+
+  public SelectCountry(event: any) {
+    const countryDetails: CountriesResponse = event.value;
+
+    setTimeout(() => {
+      this.route.navigate([`/leagues/${countryDetails.name}`]);
+    }, 1000);
+
   }
 
 }

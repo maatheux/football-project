@@ -19,7 +19,7 @@ export class AuthGuard implements CanLoad {
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     if (!this.cookieService.StoredKeyIsValid()) {
-      this.route.navigate(['']);
+      this.route.navigate(['/auth']);
       return false;
     }
 

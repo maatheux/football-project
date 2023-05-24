@@ -1,0 +1,45 @@
+<section class="leagues-list-container">
+  <h1>Lista de Ligas <span *ngIf="selectedCountry !== ''">({{selectedCountry}})</span></h1>
+
+  <div class="league-list">
+    <div class="league-box" *ngFor="let league of leaguesList">
+      <p-card header="{{league.league.name}}" styleClass="p-card-shadow">
+        <ng-template pTemplate="header">
+          <!-- <img src="{{league.league.logo}}" alt="{{league.league.name}}"> -->
+          <div
+            class="img-header"
+            [ngStyle]="{
+              'width': '100%',
+              'height': '10rem',
+              'background-image': 'url('+league.league.logo+')',
+              'background-size': 'contains',
+              'background-repeat': 'no-repeat',
+              'background-position': 'center'
+            }"
+          ></div>
+        </ng-template>
+        <h2>Temporadas</h2>
+        <div class="seasons-list-container">
+          <ul>
+            <li *ngFor="let season of league.seasons">
+              <p-button
+                pRipple
+                styleClass="p-button-raised p-button-text"
+                (click)="SelectLeagueAndSeason(league.league.id, season.year)"
+                [ngStyle]="{'width': '100%'}"
+              >
+                <ng-template pTemplate="content">
+                  <span
+                    [ngStyle]="{'width': '100%', 'text-align': 'center'}"
+                  >
+                    {{season.start.slice(0, 4)}}<span *ngIf="season.start.slice(0, 4) !== season.end.slice(0, 4)">/{{season.end.slice(0, 4)}}</span>
+                  </span>
+                </ng-template>
+              </p-button>
+            </li>
+          </ul>
+        </div>
+      </p-card>
+    </div>
+  </div>
+</section>

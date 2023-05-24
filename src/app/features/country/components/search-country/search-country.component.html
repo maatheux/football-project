@@ -3,7 +3,15 @@
   <div class="search-container">
     <p>Escolha o país e descubra mais sobre as ligas e seus jogadores</p>
     <div class="countries-dropdown">
-      <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" placeholder="Selecione o país" [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name"></p-dropdown>
+      <p-dropdown
+        inputId="dropdown"
+        [autoDisplayFirst]="false"
+        placeholder="Selecione o país"
+        [options]="countries"
+        [(ngModel)]="selectedCountry"
+        optionLabel="name"
+        (onChange)="SelectCountry($event)"
+      ></p-dropdown>
     </div>
   </div>
 </div>
