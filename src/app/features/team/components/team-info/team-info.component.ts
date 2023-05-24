@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TeamInfoParams } from '@features/team/interfaces/team-info-params.interface';
 import { TeamsService } from '@features/team/services/teams.service';
 
 @Component({
@@ -9,9 +10,12 @@ import { TeamsService } from '@features/team/services/teams.service';
 })
 export class TeamInfoComponent implements OnInit {
 
-  public leagueId: number = 0;
-  public season: number = 0;
-  public teamId: number = 0;  
+  public teamInfoParams: TeamInfoParams = {
+    leagueId: 0,
+    season: 0,
+    teamId: 0,
+    team: "",
+  };
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -22,9 +26,10 @@ export class TeamInfoComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe({
       next: (res) => {
-        this.leagueId = res?.['league'];
-        this.season = res?.['season'];
-        this.teamId = res?.['team'];
+        this.teamInfoParams.leagueId = res?.['league'];
+        this.teamInfoParams.season = res?.['season'];
+        this.teamInfoParams.teamId = res?.['teamId'];
+        this.teamInfoParams.team = res?.['team']
 
       }
     })

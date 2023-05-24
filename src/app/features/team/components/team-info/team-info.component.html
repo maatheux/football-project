@@ -1,1 +1,28 @@
-<p>team-info works!</p>
+<div class="team-info-container">
+  <h1>{{teamInfoParams.team}}</h1>
+
+  <div class="tab-view-container">
+    <p-tabView>
+      <p-tabPanel header="Jogadores">
+        <ng-template pTemplate="content">
+          <app-team-players [teamInfoParams]="teamInfoParams"></app-team-players>
+        </ng-template>
+      </p-tabPanel>
+      <p-tabPanel header="Formações">
+        <ng-template pTemplate="content">
+          <app-team-lineups [teamInfoParams]="teamInfoParams"></app-team-lineups>
+        </ng-template>
+      </p-tabPanel>
+      <p-tabPanel header="Resultados">
+        <ng-template pTemplate="content">
+          <app-team-fixtures [teamInfoParams]="teamInfoParams"></app-team-fixtures>
+        </ng-template>
+      </p-tabPanel>
+      <p-tabPanel header="Estatísticas de gols">
+        <ng-template pTemplate="content">
+          <app-team-goals [teamInfoParams]="teamInfoParams"></app-team-goals>
+        </ng-template>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+</div>

@@ -38,8 +38,8 @@ export class TeamsListComponent implements OnInit {
     })
   }
 
-  public SelectTeam(teamId: number) {
-    this.route.navigate([`/teams/${this.leagueId}/${this.season}/${teamId}`]);
+  public SelectTeam(teamId: number, team: string) {
+    this.route.navigate([`/teams/${this.leagueId}/${this.season}/${teamId}/${team}`]);
   }
 
 }
