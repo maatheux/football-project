@@ -1,24 +1,24 @@
 <div class="login-container">
   <p-card>
-    <p class="login-greetings">Seja bem-vindo ao FutProject!</p>
+    <p class="login-greetings">Seja bem-vindo ao Meu Time!</p>
     <div class="auth-modes-container">
         <div class="login-box box">
-          <form>
+          <div class="login-form">
             <div class="key-field">
               <div class="p-inputgroup">
                 <span class="p-inputgroup-addon">
                     <i class="pi pi-key"></i>
                 </span>
                 <span class="p-float-label">
-                    <input type="text" id="key" pInputText>
+                    <input type="text" id="key" pInputText [(ngModel)]="userKey">
                     <label for="key">API Key</label>
                 </span>
               </div>
             </div>
             <div class="login-btn">
-              <p-button label="Entrar"></p-button>
+              <p-button label="Entrar" (click)="SendKey(userKey)"></p-button>
             </div>
-          </form>
+          </div>
         </div>
         <div class="divider">
             <p-divider layout="vertical">

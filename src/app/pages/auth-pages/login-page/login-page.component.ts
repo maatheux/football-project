@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EApiStatus } from '@core/enum/EApiStatus.enum';
+import { GetApiStatusService } from '@core/services/get-api-status.service';
+import { NgxCookieService } from '@core/services/ngx-cookie.service';
 
 @Component({
   selector: 'app-login-page',
@@ -8,12 +11,35 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  public userKey: string = "";
+
+  constructor(
+    private router: Router,
+    private apiStatusService: GetApiStatusService,
+    private cookieService: NgxCookieService,
+  ) { }
 
   ngOnInit(): void {
   }
 
-  GoToSignUp() {
+  public SendKey(key?: string) {
+    if (key) this.apiStatusService.GetApiStatus(key).subscribe({
+      next: (res) => {
+        console.log(res);
+
+        if (res !== EApiStatus.NotValid) {
+          console.log(this.cookieService.SaveKey(this.userKey));
+          this.router.navigate(['/home'])
+        }
+      },
+      error: (err) => console.error(err),
+
+
+    })
+
+  }
+
+  public GoToSignUp() {
     this.router.navigateByUrl('auth/sign-up');
   }
 

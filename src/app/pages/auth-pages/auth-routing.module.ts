@@ -16,7 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'sign-up',
-    component: SignUpPageComponent,
+    /* component: SignUpPageComponent, */
+    redirectTo: 'login',
   }
 ]
 
