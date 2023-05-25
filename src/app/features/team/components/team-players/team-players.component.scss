@@ -1,0 +1,43 @@
+:host {
+
+  .players-list-container {
+
+    .players-list {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      .players-box {
+        width: 50%;
+        padding: 2rem;
+
+        .card-content {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          padding: 1rem;
+
+          .player-info-container {
+            width: 50%;
+          }
+
+          h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+          }
+
+          ul {
+            margin-bottom: 1rem;
+          }
+
+        }
+
+      }
+    }
+  }
+}

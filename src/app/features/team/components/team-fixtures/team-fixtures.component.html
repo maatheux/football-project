@@ -1,1 +1,24 @@
-<p>team-fixtures works!</p>
+<div class="fixtures-container" [ngStyle]="{'padding': '1rem'}">
+  <p-table [value]="fixturesStatistics" styleClass="p-datatable-striped">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Tipo Resultado</th>
+        <th>Em casa</th>
+        <th>Fora de casa</th>
+        <th>Total</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-fixture>
+      <tr>
+        <td *ngIf="fixture[0] === 'played'">Todos os jogos</td>
+        <td *ngIf="fixture[0] === 'wins'">Vitórias</td>
+        <td *ngIf="fixture[0] === 'draws'">Empates</td>
+        <td *ngIf="fixture[0] === 'loses'">Derrotas</td>
+        <td>{{fixture[1].home}}</td>
+        <td>{{fixture[1].away}}</td>
+        <td>{{fixture[1].total}}</td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+</div>

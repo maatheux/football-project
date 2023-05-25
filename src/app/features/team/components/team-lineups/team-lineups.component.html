@@ -1,1 +1,17 @@
-<p>team-lineups works!</p>
+<div class="lineups-container" [ngStyle]="{'padding': '1rem'}">
+  <p-table [value]="lineupStatistics" styleClass="p-datatable-striped">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Formação</th>
+        <th>Partidas jogadas</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-lineup>
+      <tr>
+        <td>{{lineup.formation}}</td>
+        <td>{{lineup.played}}</td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+</div>

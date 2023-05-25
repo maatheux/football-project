@@ -5,6 +5,7 @@ import { NgxCookieService } from '@core/services/ngx-cookie.service';
 import { environment } from '@environment/environment';
 import { Observable, map } from 'rxjs';
 import { TeamsResponse } from '../interfaces/teams-response.interface';
+import { TeamStatistics } from '../interfaces/team-statistics.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,48 @@ export class TeamsService {
         params: {
           league: leagueId,
           season: season,
+        }
+      })
+      .pipe(
+        map(res => res.response),
+      )
+    }
+
+    return new Observable();
+  }
+
+  public GetPlayers(leagueId: number, season: number, teamId: number, page: number): Observable<ApiResponse> {
+    if (this.cookieService.StoredKeyIsValid()) {
+      const API_KEY = this.cookieService.GetKey();
+
+      return this.httpClient.get<ApiResponse>(`${this.apiUrl}/players`, {
+        headers: {
+          "X-RapidAPI-Key": API_KEY
+        },
+        params: {
+          league: leagueId,
+          season: season,
+          team: teamId,
+          page: page,
+        }
+      })
+    }
+
+    return new Observable();
+  }
+
+  public GetTeamStatistics(leagueId: number, season: number, teamId: number): Observable<TeamStatistics> {
+    if (this.cookieService.StoredKeyIsValid()) {
+      const API_KEY = this.cookieService.GetKey();
+
+      return this.httpClient.get<ApiResponse>(`${this.apiUrl}/teams/statistics`, {
+        headers: {
+          "X-RapidAPI-Key": API_KEY
+        },
+        params: {
+          league: leagueId,
+          season: season,
+          team: teamId,
         }
       })
       .pipe(

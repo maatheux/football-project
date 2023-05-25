@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { NgxCookieService } from '@core/services/ngx-cookie.service';
 import { TeamInfoParams } from '@features/team/interfaces/team-info-params.interface';
+import { TeamsService } from '@features/team/services/teams.service';
 
 @Component({
   selector: 'app-team-players',
@@ -15,10 +17,29 @@ export class TeamPlayersComponent implements OnInit {
     team: "",
   };
 
-  constructor() { }
+  public playersResponse: any;
+  public playersList: any[] = [];
+
+  private page: number = 1;
+
+  constructor(
+    private teamsService: TeamsService,
+  ) { }
 
   ngOnInit(): void {
-    console.log(this.teamInfoParams);
+    this.GetPlayers(false);
+  }
+
+  public GetPlayers(morePlayers: boolean) {
+    if (morePlayers) this.page += 1;
+
+    this.teamsService.GetPlayers(this.teamInfoParams.leagueId, this.teamInfoParams.season, this.teamInfoParams.teamId, this.page).subscribe({
+      next: (res) => {
+        this.playersResponse = res;
+        this.playersList.push(...this.playersResponse.response);
+
+      }
+    })
   }
 
 }

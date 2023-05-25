@@ -1,1 +1,39 @@
-<p>team-players works!</p>
+<section class="players-list-container">
+  <div class="players-list">
+    <div class="players-box" *ngFor="let player of playersList">
+      <p-card styleClass="p-card-shadow">
+        <div class="card-content">
+          <div
+            class="img-header"
+            [ngStyle]="{
+              'width': '50%',
+              'height': '10rem',
+              'background-image': 'url('+player.player.photo+')',
+              'background-size': 'contains',
+              'background-repeat': 'no-repeat',
+              'background-position': 'left'
+            }"
+          ></div>
+          <div class="player-info-container">
+            <h2>{{player.player.name}}</h2>
+            <ul>
+              <li>Idade: {{player.player.age}}</li>
+              <li>Nacionalidade: {{player.player.nationality}}</li>
+              <li>Posição: {{player.statistics[0].games.position}}</li>
+            </ul>
+          </div>
+        </div>
+      </p-card>
+    </div>
+    <div class="more-players-btn">
+      <p-button
+        pRipple
+        label="Mais jogadores"
+        styleClass="p-button-raised p-button-text"
+        [ngStyle]="{'width': '100%'}"
+        *ngIf="playersResponse?.paging?.current < playersResponse?.paging?.total"
+        (click)="GetPlayers(true)"
+      ></p-button>
+    </div>
+  </div>
+</section>

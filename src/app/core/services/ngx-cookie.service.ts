@@ -15,9 +15,9 @@ export class NgxCookieService {
 
   public SaveKey(key: string): CookieStatusResponse {
     const deadline = new Date();
-    const durationInMinutes = 60;
+    const durationInMinutes = 36;
 
-    deadline.setTime(deadline.getTime() + durationInMinutes * 1000)
+    deadline.setTime(deadline.getTime() + durationInMinutes * 100000)
 
     this.cookieService.set("key", key, deadline, "/");
 

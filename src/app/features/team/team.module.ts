@@ -6,6 +6,8 @@ import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { TeamInfoComponent } from './components/team-info/team-info.component';
 import { TabViewModule } from 'primeng/tabview';
+import { TableModule } from 'primeng/table';
+import { ChartModule } from 'primeng/chart';
 import { TeamPlayersComponent } from './components/team-players/team-players.component';
 import { TeamLineupsComponent } from './components/team-lineups/team-lineups.component';
 import { TeamFixturesComponent } from './components/team-fixtures/team-fixtures.component';
@@ -28,6 +30,8 @@ import { TeamGoalsComponent } from './components/team-goals/team-goals.component
     ButtonModule,
     RippleModule,
     TabViewModule,
+    TableModule,
+    ChartModule,
   ],
   exports: [
     TeamsListComponent,
