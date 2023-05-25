@@ -5,6 +5,7 @@ import { NgxCookieService } from '@core/services/ngx-cookie.service';
 import { environment } from '@environment/environment';
 import { Observable, map } from 'rxjs';
 import { LeaguesResponse } from '../interfaces/leagues-response.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class LeaguesService {
 
   constructor(
     private httpClient: HttpClient,
-    private cookieService: NgxCookieService
+    private cookieService: NgxCookieService,
+    private route: Router
   ) { }
 
   public GetAllLeagues(country: string): Observable<LeaguesResponse[]> {
@@ -35,6 +37,7 @@ export class LeaguesService {
       )
     }
 
+    this.route.navigate(['/auth']);
     return new Observable();
   }
 }

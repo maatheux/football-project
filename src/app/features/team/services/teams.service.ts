@@ -6,6 +6,7 @@ import { environment } from '@environment/environment';
 import { Observable, map } from 'rxjs';
 import { TeamsResponse } from '../interfaces/teams-response.interface';
 import { TeamStatistics } from '../interfaces/team-statistics.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ export class TeamsService {
 
   constructor(
     private httpClient: HttpClient,
-    private cookieService: NgxCookieService
+    private cookieService: NgxCookieService,
+    private route: Router
   ) { }
 
   public GetAllTeams(leagueId: number, season: number): Observable<TeamsResponse[]> {
@@ -37,6 +39,7 @@ export class TeamsService {
       )
     }
 
+    this.route.navigate(['/auth']);
     return new Observable();
   }
 
@@ -57,6 +60,7 @@ export class TeamsService {
       })
     }
 
+    this.route.navigate(['/auth']);
     return new Observable();
   }
 
@@ -79,6 +83,7 @@ export class TeamsService {
       )
     }
 
+    this.route.navigate(['/auth']);
     return new Observable();
   }
 }
