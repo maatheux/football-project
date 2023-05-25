@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://v3.football.api-sports.io'
+  API_URL: 'https://v3.football.api-sports.io',
+  API_KEY: '59d0d09c86b8fd191c8e9bcb70985115' // add apenas para os testes
 };
 
 /*
