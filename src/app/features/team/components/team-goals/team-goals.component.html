@@ -1,3 +1,5 @@
-<div class="goals-container" [ngStyle]="{'padding': '1rem 12rem'}">
-  <p-chart type="bar" [data]="goalsChartData" [options]="goalsChartOptions"></p-chart>
+<div class="goals-container" [ngStyle]="{'width': '100%', 'display': 'flex', 'justify-content': 'center'}">
+  <div class="goals-box" [ngStyle]="{'display': 'flex', 'justify-content': 'left', 'min-height': '300px', 'overflow-y': 'auto'}">
+    <p-chart type="bar" [width]="'600px'" [data]="goalsChartData" [options]="goalsChartOptions"></p-chart>
+  </div>
 </div>

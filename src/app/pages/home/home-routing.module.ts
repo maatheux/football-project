@@ -11,26 +11,18 @@ const routes: Routes = [
   {
     path: '',
     component: SearchCountryComponent,
-    canLoad: [AuthGuard],
   },
   {
     path: 'leagues/:country',
     component: LeaguesListComponent,
-    canLoad: [AuthGuard],
   },
   {
     path: 'teams/:league/:season',
     component: TeamsListComponent,
-    canLoad: [AuthGuard],
   },
   {
     path: 'teams/:league/:season/:teamId/:team',
     component: TeamInfoComponent,
-    canLoad: [AuthGuard],
-  },
-  {
-    path: '**',
-    redirectTo: '',
   }
 ];
 

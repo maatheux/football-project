@@ -41,3 +41,12 @@
     }
   }
 }
+
+@media screen and (max-width: 720px) {
+  :host {
+
+    .search-container {
+      width: 90% !important;
+    }
+  }
+}
