@@ -7,6 +7,7 @@ import { CardModule } from 'primeng/card';
 import { DividerModule } from 'primeng/divider';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext'
+import { ToastModule } from 'primeng/toast';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetApiStatusService } from '@core/services/get-api-status.service';
@@ -29,6 +30,7 @@ import { HttpClient } from '@angular/common/http';
     InputTextModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastModule,
   ],
   providers: []
 })

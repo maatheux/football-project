@@ -1,6 +1,6 @@
 # Meu Time
 
-Meu Time é um projeto desenvolvido em Angular, que tem como objetivo de trazer dados sobre as ligas de futebol pelo mundo, seus times e jogadores. É possível escolher qual temporada você quer buscar os dados da liga. Todos os dados estão sendo consumidos da Api [Api-Football](https://www.api-football.com/documentation-v3).
+[Meu Time](https://meutime.matheuslima.net) é um projeto desenvolvido em Angular, que tem como objetivo de trazer dados sobre as ligas de futebol pelo mundo, seus times e jogadores. É possível escolher qual temporada você quer buscar os dados da liga. Todos os dados estão sendo consumidos da Api [Api-Football](https://www.api-football.com/documentation-v3).
 
 Esse projeto foi estruturado baseando-se no modelo de estruturação de projetos Angular do [Touhid Rahman](https://blog.touhidrahman.me), apresentado no artigo [How to Structure Angular Apps in 2021](https://javascript.plainenglish.io/how-to-structure-angular-apps-in-2021-a0bdd481ad0d).
 
@@ -9,12 +9,21 @@ Nesse projeto foi utilizado ferramentas como:
 - [NGX Cookie Service](https://github.com/stevermeister/ngx-cookie-service)
 - [Chart.js](https://www.chartjs.org)
 
+
+<b>Link para acessar o projeto: </b>[meutime.matheuslima.net](https://meutime.matheuslima.net)
+
 ## Pré-requisitos
 
 Antes de iniciar, verifique se você tem os seguintes requisitos:
 
+<b>1- Para rodar na máquina local</b>
 - Node.js (versão 16.13.0)
 - Angular CLI (versão 14.0.7)
+
+<b>2- Chave de acesso</b>
+Para consumir a Api [Api-Football](https://www.api-football.com/documentation-v3) é necessário criar uma chave no portal deles. Porém cada chave tem um limite de 100 consultas por dia. Por esse motivo será necessário criar uma conta nesse link: [https://dashboard.api-football.com/register](https://dashboard.api-football.com/register).
+
+Ao criar a conta, acesse ao dashboard para pegar a chave no API-KEY. Este é o link para pegar a chave: [https://dashboard.api-football.com/profile?access](https://dashboard.api-football.com/profile?access). 
 
 ## Instalação
 
