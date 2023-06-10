@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TeamInfoParams } from '@features/team/interfaces/team-info-params.interface';
 import { TeamsService } from '@features/team/services/teams.service';
+import { LoadingService } from '@shared/services/loading.service';
 
 @Component({
   selector: 'app-team-goals',
@@ -22,11 +23,13 @@ export class TeamGoalsComponent implements OnInit {
   public goalsChartOptions: any
 
   constructor(
-    private teamsService: TeamsService
+    private teamsService: TeamsService,
+    private loadingService: LoadingService,
   ) { }
 
   ngOnInit(): void {
-    /* this.goalsChartOptions = {
+    this.loadingService.activate();
+    this.goalsChartOptions = {
       plugins: {
         datalabels: {
           align: 'end',
@@ -47,9 +50,25 @@ export class TeamGoalsComponent implements OnInit {
               weight: 'bold',
             };
           },
-        }
-      },
-    } */ // not working
+          formatter: function(value: any, context: any) {
+            return `${value}%`;
+          }
+        },
+        legend: {
+          display: true,
+          //position: 'bottom',
+          labels: {
+            font: {
+              size: 13,
+            }
+          }
+        },
+        title: {
+          display: true,
+          text: " "
+        },
+      }
+    }; // not working
 
     this.teamsService.GetTeamStatistics(this.teamInfoParams.leagueId, this.teamInfoParams.season, this.teamInfoParams.teamId).subscribe({
       next: (res) => {
@@ -66,7 +85,8 @@ export class TeamGoalsComponent implements OnInit {
           ]
         };
 
-      }
+      },
+      complete: () => this.loadingService.deactivate(),
     })
   }
 

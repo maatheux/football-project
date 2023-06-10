@@ -1,5 +1,5 @@
 <section class="teams-list-container">
-  <h1>Lista de Times <!-- <span *ngIf=" !== ''">({{}})</span> --></h1>
+  <h1>Lista de Times <span *ngIf=" leagueName !== ''">({{leagueName}})</span></h1>
 
   <div class="teams-list">
     <div class="team-box" *ngFor="let team of teamsList">

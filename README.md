@@ -21,6 +21,7 @@ Antes de iniciar, verifique se você tem os seguintes requisitos:
 - Angular CLI (versão 14.0.7)
 
 <b>2- Chave de acesso</b>
+
 Para consumir a Api [Api-Football](https://www.api-football.com/documentation-v3) é necessário criar uma chave no portal deles. Porém cada chave tem um limite de 100 consultas por dia. Por esse motivo será necessário criar uma conta nesse link: [https://dashboard.api-football.com/register](https://dashboard.api-football.com/register).
 
 Ao criar a conta, acesse ao dashboard para pegar a chave no API-KEY. Este é o link para pegar a chave: [https://dashboard.api-football.com/profile?access](https://dashboard.api-football.com/profile?access). 

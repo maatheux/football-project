@@ -17,7 +17,7 @@ const routes: Routes = [
     component: LeaguesListComponent,
   },
   {
-    path: 'teams/:league/:season',
+    path: 'teams/:league/:leagueName/:season',
     component: TeamsListComponent,
   },
   {

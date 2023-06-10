@@ -11,6 +11,8 @@
         [(ngModel)]="selectedCountry"
         optionLabel="name"
         (onChange)="SelectCountry($event)"
+        [filter]="true"
+        filterBy="name"
       ></p-dropdown>
     </div>
   </div>

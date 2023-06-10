@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LeaguesResponse } from '@features/league/interfaces/leagues-response.interface';
 import { LeaguesService } from '@features/league/services/leagues.service';
+import { LoadingService } from '@shared/services/loading.service';
 
 @Component({
   selector: 'app-leagues-list',
@@ -17,25 +18,26 @@ export class LeaguesListComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private route: Router,
     private leaguesService: LeaguesService,
+    private loadingService: LoadingService,
   ) { }
 
   ngOnInit(): void {
+    this.loadingService.activate();
     this.activatedRoute.params.subscribe({
       next: (res) => {
         this.selectedCountry = res?.['country'];
         this.leaguesService.GetAllLeagues(this.selectedCountry).subscribe({
           next: (res) => {
             this.leaguesList = [...res];
-            console.log(this.leaguesList);
-
-          }
+          },
+          complete: () => this.loadingService.deactivate(),
         })
       }
     })
   }
 
-  public SelectLeagueAndSeason(leagueId: number, season: number) {
-    this.route.navigate([`/teams/${leagueId}/${season}`]);
+  public SelectLeagueAndSeason(leagueId: number, season: number, leagueName: string) {
+    this.route.navigate([`/teams/${leagueId}/${leagueName}/${season}`]);
   }
 
 }

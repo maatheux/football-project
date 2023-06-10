@@ -25,7 +25,7 @@
               <p-button
                 pRipple
                 styleClass="p-button-raised p-button-text"
-                (click)="SelectLeagueAndSeason(league.league.id, season.year)"
+                (click)="SelectLeagueAndSeason(league.league.id, season.year, league.league.name)"
                 [ngStyle]="{'width': '100%'}"
               >
                 <ng-template pTemplate="content">

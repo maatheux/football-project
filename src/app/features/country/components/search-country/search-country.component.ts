@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CountriesResponse } from '@features/country/interfaces/countries-response.interface';
 import { CountriesService } from '@features/country/services/countries.service';
+import { LoadingService } from '@shared/services/loading.service';
 
 @Component({
   selector: 'app-search-country',
@@ -16,6 +17,7 @@ export class SearchCountryComponent implements OnInit {
   constructor(
     private countriesService: CountriesService,
     private route: Router,
+    private loadingService: LoadingService,
   ) { }
 
   ngOnInit(): void {
@@ -27,10 +29,12 @@ export class SearchCountryComponent implements OnInit {
   }
 
   public SelectCountry(event: any) {
+    this.loadingService.activate();
     const countryDetails: CountriesResponse = event.value;
 
     setTimeout(() => {
       this.route.navigate([`/leagues/${countryDetails.name}`]);
+      this.loadingService.deactivate();
     }, 1000);
 
   }
