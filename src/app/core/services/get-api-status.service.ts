@@ -31,7 +31,7 @@ export class GetApiStatusService {
       }
     })
     .pipe(
-      map(res => res.results !== EApiStatus.NotValid),
+      map(res => res.response?.subscription?.active ? true : false),
     )
   }
 

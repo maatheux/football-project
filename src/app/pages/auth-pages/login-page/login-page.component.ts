@@ -29,10 +29,10 @@ export class LoginPageComponent implements OnInit {
 
   public SendKey(key?: string) {
     this.loadingService.activate();
-    if (key) this.apiStatusService.GetApiStatus(key).subscribe({
+    if (key) this.apiStatusService.ApiKeyIsValid(key).subscribe({
       next: (res) => {
 
-        if (res !== EApiStatus.NotValid) {
+        if (res) {
           this.cookieService.SaveKey(this.userKey);
           this.router.navigate(['/'])
         } else {
