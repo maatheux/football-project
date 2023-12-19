@@ -26,6 +26,8 @@ Para consumir a Api [Api-Football](https://www.api-football.com/documentation-v3
 
 Ao criar a conta, acesse ao dashboard para pegar a chave no API-KEY. Este é o link para pegar a chave: [https://dashboard.api-football.com/profile?access](https://dashboard.api-football.com/profile?access). 
 
+Esta chave será pública para utilização de forma mais simples ao projeto, porém ela já pode ter atingido o limite diário de requisições: <b>0986458185bbdd111936e9778c43bb55</b>
+
 ## Instalação
 
 Siga as etapas abaixo para configurar o projeto localmente:
